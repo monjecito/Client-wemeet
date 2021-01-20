@@ -1,0 +1,25 @@
+<div class="col-lg-4 float-left">
+    <h3>{{title}}</h3>
+    <span>Solo podrás interactuar con aquellos usuarios que te sigan</span>
+    <br>
+    <div class="sidebar-admin">
+        <ul class="nav flex-column">
+            <li class="nav-item" [routerLinkActive]="['active']">
+              <a [routerLink]="['enviar']" class="nav-link" >Enviar mensaje</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+              <a [routerLink]="['recibidos']" class="nav-link" >Mensajes recibidos</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']">
+              <a  [routerLink]="['enviados']" class="nav-link">Mensajes enviados</a>
+            </li>
+            <li class="nav-item" [routerLinkActive]="['active']" >
+              <a [routerLink]="['/home']" class="nav-link" >Información</a>
+            </li>
+          </ul>
+    </div>
+</div>
+
+<div class="col-lg-8">
+    <router-outlet></router-outlet>
+</div>

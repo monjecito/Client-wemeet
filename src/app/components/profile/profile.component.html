@@ -1,0 +1,96 @@
+<div class="col col-lg-8 panel panel-default pull-left">
+    <h1 class="h1-strong">{{title}}</h1>
+
+    <div id="data-profile" *ngIf="user">
+        <div class="avatar pull-left">
+            <img src="{{url+'get-image-user/'+user.image}}" *ngIf="user && user.image"/>
+            <img src="assets/profile.jpg" *ngIf="!user.image"/>
+        </div>
+
+        <div class="name-surname pull-left">
+            <div class="badge badge-secondary pull-left" *ngIf="followed">
+                Te sigue
+            </div>
+            <div class="clearfix"></div>
+            <div class="pull-left">
+            <p class="username">{{user.name+' '+user.surname}}</p>
+            <p class="nick">{{user.nick}}</p><br>
+            
+        </div>
+            <div class="clearfix"></div>
+
+        
+           
+              
+
+                
+    
+            <div class="clearfix"></div>
+        </div>
+        <div class="stats pull-right" *ngIf="stats">
+            <div class="following-data">
+                <a [routerLink]="['/siguiendo',user._id,1]">
+                    <span class="label-stats">
+                        Siguiendo
+                    </span>
+                    <span>
+                        <span class="number-stats">
+                            {{stats.following}}
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div class="following-data">
+                <a [routerLink]="['/seguidores',user._id,1]">
+                    <span class="label-stats">
+                        Seguidores
+                    </span>
+                    <span>
+                        <span class="number-stats">
+                            {{stats.followed}}
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div class="following-data">
+                <a href="#">
+                    <span class="label-stats">
+                       Publicaciones
+                    </span>
+                    <span>
+                        <span class="number-stats">
+                            {{stats.publication}}
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div class="following-data">
+                <a [routerLink]="['/likes',user._id,1]">
+                    <span class="label-stats">
+                       Likes
+                    </span>
+                    <span>
+                        <span class="number-stats">
+                            {{stats.like}}
+                        </span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="col-lg-12" *ngIf="user">
+            <publications [user]="user._id"></publications>
+            
+        </div>
+    </div>
+   
+   
+    
+    <div class="clearfix"></div>
+</div>
+
+
+
+
+

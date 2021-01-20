@@ -1,0 +1,540 @@
+/*GENERALES*/
+.h1-strong{
+    font-size:35px;
+    font-weight: bold;
+    /* margin-left: 13px; */
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+.active{
+  background-color: gainsboro;
+}
+.active a{
+  color:gray;
+}
+.bg-dark{
+    background-color: grey !important;
+    padding-top: 0px;
+}
+.navbar{
+    position: relative !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    padding-top: 30px !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0px !important;
+    margin-top:5px;
+    width: 100%;
+
+}
+    .jumbotron{
+        text-align: center;
+    }
+.container{
+    width: 100% !important;
+}
+.navlink .active{
+  color: #214977;
+}
+.dropdown-menu>li>a{
+    color: grey !important;
+
+}
+.dropdown-menu>li>a:hover{
+    color: black !important;
+}
+.pointer{
+    cursor: pointer;
+}
+.img{
+  vertical-align: middle;
+  border-radius: 50px;
+  width: 50px;
+  height: 40px;
+}
+
+
+/*GENTE */
+.people{
+    min-height: 500px;
+}
+ .item-user ,
+ .item-publication{
+     padding-top: -20px;
+     border: 1px solid #444444;
+     overflow: hidden;
+ }
+.item-user .image-user img,
+.item-publication .image-user{
+    width: 75px;
+    height: 75px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-right: 10px;
+    margin-left: 30px;
+    margin-top: 10px;
+    
+    
+}
+.user-name{
+    margin-top:0px;
+}
+
+.item-user .user-name .nickname{
+   color:#969393;
+   font-weight: bold;
+}
+.item-user .user-name .name-surname a{
+    color:#444;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.btn{
+    padding: 10px;
+}
+
+/**SIDEBAR**/
+
+
+.sidebar-32{
+    width: 55% !important;
+    padding: 0px !important;
+}
+#user-card,#new-publication{
+    padding:25px;
+    width: 72%;
+    padding-left: 20px;
+  
+}
+#new-publication{
+    padding: 18px;
+    padding-left: 10px;
+}
+.avatar{
+    width:100px;
+    height:75px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-right: 15px;
+   
+  
+}
+#user-card
+.avatar img{
+   width: 100%; 
+   height: 100%;
+}
+
+#user-card .name-surname{
+    font-weight:300;
+    font-size: 17px;
+}
+
+#user-card .name-surname a{
+    color: #555;
+}
+#user-card .name-surname .nickname{
+    color: #969393;
+}
+#user-card .name-surname .label-stats{
+    border: 2px solid #eee;
+    margin-top:10px;
+}   
+#user-card .number-stats{
+   font-weight: bold;
+   color: green;
+}  
+
+#user-card .stats{
+
+   border-top:1px solid #eee;
+}
+#user-card .stats a:hover{
+
+    text-decoration: none;
+
+ }
+ #user-card .stats a:hover .number-stats{
+    font-weight: bold;
+   color: #cc1717;
+
+ }
+
+ #user-card .label-stats,
+ #user-card .number-stats{
+     display: block;
+     text-align: center;
+     transition: all 300ms;
+ }
+#user-card .following-data{
+    float: center;
+    padding-right:4px ;
+    padding-left:4px ;
+    margin-top: 10px;
+    border-right: 2px solid #eee;
+    border-left: 2px solid #eee;
+}
+
+#user-card .following-data:first-child{
+    padding-left: 6px;
+  }
+#user-card .label-stats{
+    font-weight: bold;
+    color: #555;
+}
+
+/*TIMELINE*/
+
+#publications{
+    min-width: 500px;
+}
+
+
+.date{
+    float: left;
+
+}
+
+
+/*PERFIL*/
+
+#data-profile{
+    
+    margin-top: 30px;
+    min-height: 300px;
+}
+#data-profile .avatar{
+    width:185px;
+    height:185px;
+    border-radius: 400px;
+    overflow: hidden;
+  
+}
+#data-profile .avatar img{
+   width: 100%;
+   height: 100%;
+}
+.datos-perfil p .name .surname{
+   padding-left: 150px;
+   padding-top: 150px;
+}
+
+#data-profile .name-surname .username{
+    font-size:25px;
+    font-weight: bold;
+    color:#555;
+}
+
+#data-profile .name-surname .nick{
+    font-size:20px;
+    font-weight: normal;
+    color:grey;
+}
+
+#data-profile .stats{
+border-left: 4px solid #eee;
+margin-left: 35px;
+padding-left: 25px;
+height: 180px;
+}
+#data-profile .stats a{
+    font-size: 20px;
+    line-height: 35px;
+    color: #555;
+}
+#data-profile #publications{
+    margin-top: 50px;
+}
+
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: 0.75rem;
+}
+
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('https://source.unsplash.com/WEQbe2jBg40/600x1200');
+  background-size: cover;
+  background-position: center;
+}
+
+.login-heading {
+  font-weight: 300;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+  border-radius: 2rem;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+  height: auto;
+  border-radius: 2rem;
+}
+
+.form-label-group>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  cursor: text;
+  /* Match the input under the label */
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.form-label-group input:not(:placeholder-shown)~label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #777;
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+
+@supports (-ms-ime-align: auto) {
+  .form-label-group>label {
+    display: none;
+  }
+  .form-label-group input::-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .form-label-group>label {
+    display: none;
+  }
+  .form-label-group input:-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+.loading{
+  width: 100%;
+  height: 100%;
+}
+
+.tracking-detail {
+  padding:3rem 0
+ }
+ #tracking {
+  margin-bottom:1rem
+ }
+ [class*=tracking-status-] p {
+  margin:0;
+  font-size:1.1rem;
+  color:#fff;
+  text-transform:uppercase;
+  text-align:center
+ }
+ [class*=tracking-status-] {
+  padding:1.6rem 0
+ }
+ .tracking-status-intransit {
+  background-color:#65aee0
+ }
+ .tracking-status-outfordelivery {
+  background-color:#f5a551
+ }
+ .tracking-status-deliveryoffice {
+  background-color:#f7dc6f
+ }
+ .tracking-status-delivered {
+  background-color:#4cbb87
+ }
+ .tracking-status-attemptfail {
+  background-color:#b789c7
+ }
+ .tracking-status-error,.tracking-status-exception {
+  background-color:#d26759
+ }
+ .tracking-status-expired {
+  background-color:#616e7d
+ }
+ .tracking-status-pending {
+  background-color:#ccc
+ }
+ .tracking-status-inforeceived {
+  background-color:#214977
+ }
+ .tracking-list {
+  border:1px solid #e5e5e5
+ }
+ .tracking-item {
+  border-left:1px solid #e5e5e5;
+  position:relative;
+  padding:2rem 1.5rem .5rem 2.5rem;
+  font-size:.9rem;
+  margin-left:3rem;
+  min-height:5rem
+ }
+ .tracking-item a{
+  font-size: 25px;
+  font-weight: normal;
+  color: grey;
+ } 
+ .tracking-item a:hover{
+  font-size: 25px;
+  font-weight: normal;
+  color: grey;
+ } 
+
+ .tracking-item:last-child {
+  padding-bottom:4rem
+ }
+ .tracking-item .tracking-date {
+  margin-bottom:.5rem
+ }
+ .tracking-item .tracking-date span {
+  color:#888;
+  font-size:85%;
+  padding-left:.4rem
+ }
+ .tracking-item .tracking-content {
+  padding:.5rem .8rem;
+  background-color:#f4f4f4;
+  border-radius:.5rem
+ }
+ .tracking-item .tracking-content span {
+  display:block;
+  color:#888;
+ 
+ }
+ .tracking-item .tracking-icon img {
+
+  position:absolute;
+  left:-1.3rem;
+  width:2.6rem;
+  height:2.6rem;
+  text-align:center;
+  border-radius:50%;
+  font-size:1.1rem;
+  background-color:#fff;
+  color:#fff
+ }
+ .tracking-item .tracking-icon.status-sponsored {
+  background-color:#f68
+ }
+ .tracking-item .tracking-icon.status-delivered {
+  background-color:#4cbb87
+ }
+ .tracking-item .tracking-icon.status-outfordelivery {
+  background-color:#f5a551
+ }
+ .tracking-item .tracking-icon.status-deliveryoffice {
+  background-color:#f7dc6f
+ }
+ .tracking-item .tracking-icon.status-attemptfail {
+  background-color:#b789c7
+ }
+ .tracking-item .tracking-icon.status-exception {
+  background-color:#d26759
+ }
+ .tracking-item .tracking-icon.status-inforeceived {
+  background-color:#214977
+ }
+ .tracking-item .tracking-icon.status-intransit {
+  color:#e5e5e5;
+  border:1px solid #e5e5e5;
+  font-size:.6rem
+ }
+ @media(min-width:992px) {
+  .tracking-item {
+   margin-left:10rem
+  }
+  .tracking-item .tracking-date {
+   position:absolute;
+   left:-10rem;
+   width:7.5rem;
+   text-align:right
+  }
+  .tracking-item .tracking-date span {
+   display:block
+  }
+  .tracking-item .tracking-content {
+   padding:0;
+   background-color:transparent
+  }
+ }
+
+
+ .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main,
+.sidebar {
+  border-radius: 1px solid #ccc;
+  padding: 15px;
+  background-color: #fff;
+}
+
+.main {
+  width: 80%;
+  height: 150vh;
+}
+
+.sidebar {
+  width: 50%;
+  height: 500px
+}
+
+body {
+  background-color: #ccc;
+  font-family: sans-serif;
+  
+}

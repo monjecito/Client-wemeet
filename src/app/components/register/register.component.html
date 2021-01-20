@@ -1,0 +1,128 @@
+<!-- <div class="col-lg-5">
+    <h1 class="h1-strong">{{title}}</h1>
+
+    <div class="alert alert-success" *ngIf="status=='success'">
+        Registro completado correctamente, <a [routerLink]="['/login']">Identificate aquí</a>
+    </div>
+
+    <div class="alert alert-danger" *ngIf="status=='error'">
+        El registro no se ha llevado a cabo, quizás tu email o tu nick ya están en uso, inténtelo de nuevo
+    </div>
+
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" class="col-lg-12">
+        <p>
+            <label>Nombre</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required />
+            <span *ngIf="!name.valid && name.touched">
+                El nombre está vacío
+            </span>
+        </p>
+        <p>
+            <label>Apellidos</label>
+            <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control"
+                required />
+            <span *ngIf="!surname.valid && surname.touched">
+                El apellido está vacío
+            </span>
+        </p>
+
+
+        <p>
+            <label>Apodo</label>
+            <input type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" class="form-control" required />
+            <span *ngIf="!nick.valid && nick.touched">
+                El apodo está vacío
+            </span>
+        </p>
+
+        <p>
+            <label>Correo electrónico</label>
+            <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required  />
+            <span *ngIf="!email.valid && email.touched">
+                El correo no es correcto
+            </span>
+        </p>
+
+        <p>
+            <label>Contraseña</label>
+            <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control"
+                required />
+            <span *ngIf="!password.valid && password.touched">
+                La contraseña no es válida
+            </span>
+        </p>
+        <input type="submit" value={{title}} class="btn btn-success" [disabled]="!registerForm.form.valid" />
+    </form>
+</div>
+
+--> 
+<div class="container-fluid">
+    <div class="row no-gutter">
+      <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+      <div class="col-md-8 col-lg-6">
+        <div class="login d-flex align-items-center py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto">
+                <div class="alert alert-success" *ngIf="status=='success'">
+                    Registro completado correctamente, <a [routerLink]="['/login']">Identificate aquí</a>
+                </div>
+            
+                <div class="alert alert-danger" *ngIf="status=='error'">
+                    El registro no se ha llevado a cabo, quizás tu email o tu nick ya están en uso, inténtelo de nuevo
+                </div> 
+                <h3 class="login-heading mb-4">{{title}}</h3>
+                <form  #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+                    <div class="form-label-group">
+                         <!--Admitiremos nombres de cualquier nacionalidad, incluyendo nombres compuestos y la mayoría de normas de acentuación. El número de caracteres será como mínimo 3 y como máximo 32. -->
+                        <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,48}" required  />
+                        <label for="name">Nombre</label>
+                        <span *ngIf="!name.valid && name.touched" style="color: red;"> 
+                           El nombre no es correcto
+                        </span>
+                      </div>
+  
+                  <div class="form-label-group">
+                        <!--Del mismo modo aceptaremos cualquier carácter independientemente de la nacionalidad, con una tamaño entre 2 y 64 caracteres.-->
+                    <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,64}" required  />
+                    <label for="surname">Apellidos</label>
+                    <span *ngIf="!surname.valid && surname.touched" style="color: red;"> 
+                        El apellido no es correcto
+                    </span>
+                  </div>
+                  <div class="form-label-group">
+                       <!--cadena de letras minúsculas, con un número opcionalmente de hasta dos dígitos al final. La cadena completa tendrá entre 5 y 12 caracteres.-->
+                    <input type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" class="form-control"  pattern="^([a-z]+[0-9]{0,2}){4,12}$" required  />
+                        <label for="nick">Nick</label>
+                        <span *ngIf="!nick.valid && nick.touched" style="color: red;"> 
+                           El nick no es correcto
+                        </span>
+                      </div>
+                      <div class="form-label-group">
+                        <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required  />
+                        <label for="email">Correo electrónico</label>
+                        <span *ngIf="!email.valid && email.touched" style="color: red;"> 
+                           El correo no es correcto
+                        </span>
+                      </div>
+                      <div class="form-label-group">
+                          <!--la cual podrá contener letras mayúsculas, minúsculas, números y los caracteres !?-. Su tamaño: entre 8 y 16 caracteres.-->
+                        <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control"  pattern="[A-Za-z0-9!?-]{8,16}" required  />
+                        <label for="password">Password(8-12 caracteres)</label>
+                        <span *ngIf="!password.valid && password.touched" style="color: red;"> 
+                            La contraseña no es correcta
+                        </span>
+                      </div>
+  
+                  
+                  <input type="submit" value={{title}} class="btn btn-success" [disabled]="!registerForm.form.valid" />
+                  <div class="text-center">
+                    <a class="small" [routerLink]="['/login']" [routerLinkActive]="['active']"> ¿Ya tienes un usuario?</a></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,89 @@
+<div class="container-fluid pull-right ">
+<div class="row wrapper">
+    <h1  class="h1-strong">Hola,{{identity.name}}</h1>
+</div>
+
+    <div id="user-card" class="col-lg-4 panel panel-default pull-left">
+        <div class="avatar">
+            <img src="{{url+'get-image-user/'+identity.image}}" *ngIf="identity.image"/>
+
+            <img src="assets/profile.jpg" *ngIf="!identity.image"/>
+        </div>
+
+        <div class="name-surname">
+            <a [routerLink]="['/perfil',identity._id]" class="username">
+                {{identity.name+'  '+identity.surname}}
+            </a>
+            <p class="nickname">{{identity.nick}}</p>
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="stats" *ngIf="stats">
+            <div class="following-data">
+                <a [routerLink]="['/siguiendo',identity._id,1]">
+                    <span class="label-stats">
+                        Siguiendo
+                    </span>
+                    <span>
+                        <span class="number-stats">
+                            {{stats.following}}
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div class="following-data">
+                <a [routerLink]="['/seguidores',identity._id,1]">
+                    <span class="label-stats">
+                        Seguidores
+                    </span>
+                    <span>
+                        <span class="number-stats">
+                            {{stats.followed}}
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div class="following-data">
+                <a [routerLink]="['/perfil',identity._id]">
+                    <span class="label-stats">
+                       Publicaciones
+                    </span>
+                    <span>
+                        <span class="number-stats">
+                            {{stats.publication}}
+                        </span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!--FORMULARIO PUBLICACIONES-->
+<div id="new-publication" class="col-lg-6 panel  pull-left">
+    <div class="alert alert-success" *ngIf="status=='success'">
+        Publicación enviada correctamente
+    </div>
+    <div class="alert alert-danger" *ngIf="status=='error'">
+        La publicación no enviada
+    </div>
+    <form #newPubForm="ngForm" (ngSubmit)="onSubmit(newPubForm,$event);" class="col-lg-8">
+        <p>
+            <label>¿Que estas pensando?</label>
+            <textarea name="text" #text="ngModel" [(ngModel)]="publication.text" class="form-control" required></textarea>
+            <span *ngIf="!text.valid && text.touched">
+                El texto de la publicación es obligatorio
+            </span>
+        </p>
+        <p>
+            <label>Sube tu foto</label>
+            <input type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)"/>
+        </p>
+
+        <input type="submit" value="Enviar" class="btn btn-success pull-center" [disabled]="!newPubForm.form.valid" />
+    </form>
+
+    <div class="row wrapper">
+</div>
+

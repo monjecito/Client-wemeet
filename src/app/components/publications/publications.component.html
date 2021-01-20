@@ -1,0 +1,62 @@
+<div class="panel panel-default">
+    <span *ngIf="!publications">NO HAY PUBLICACIONES</span>
+    <div id="publications" *ngIf="publications">
+        <div *ngFor="let publication of publications" class="item-user">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="image-user pull-left">
+                        <a href="#">
+                            <img src="{{url+'get-image-user/'+publication.user.image}}"
+                                *ngIf="publication.user.image" />
+                            <img src="assets/profile.jpg" *ngIf="!publication.user.image" />
+                        </a>
+                    </div>
+
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-success btn-sm" *ngIf="todosloslikes.indexOf(publication._id)==-1" (click)="likePublication(publication._id)"><i class="fa fa-heart-o"
+                                style="font-size:20px;padding-right: 10px;"></i>
+                            ME GUSTA
+                        </button>
+        
+                        <button class="btn btn-primary btn-sm" *ngIf="todosloslikes.indexOf(publication._id)>=0 "
+                            (mouseenter)="mouseEnter(publication._id)"
+                             (mouseleave)="mouseLeave(publication._id)"
+                             (click)="unLikePublication(publication._id)"
+                             [class.btn-danger]="publication._id == likePublicationOver">
+        
+        
+                            <span *ngIf="publication._id==likePublicationOver;else dislike">
+                                <i class="fa fa-thumbs-down" style="font-size:20px;padding-right: 10px;"></i> YA NO ME GUSTA
+                            </span>
+        
+                            <ng-template #dislike>
+                                <i class="fa fa-heart" style="font-size:20px;padding-right: 10px;"></i> TE GUSTA
+                            </ng-template>
+                            </button>
+                        </div>
+                    <span class="user-name">
+                        {{publication.user.name + ' ' + publication.user.surname}}
+                      
+                        </span>
+                       
+                <span class="date">
+                   
+                    {{(publication.created_at|amFromUnix) |amLocale:'es'| amTimeAgo }}
+                    &nbsp;|&nbsp;
+                </span>
+                
+                <br>
+                <h4 class="publication-text pull-left">
+                    {{publication.text}}
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-12 text-center" *ngIf="publications && publications.length">
+    <p>
+        <button class="btn btn-success" (click)="viewMore()" *ngIf="!noMore">Ver más publicaciones</button>
+    </p>
+</div>
