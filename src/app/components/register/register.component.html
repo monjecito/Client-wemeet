@@ -92,7 +92,7 @@
                   </div>
                   <div class="form-label-group">
                        <!--cadena de letras minúsculas, con un número opcionalmente de hasta dos dígitos al final. La cadena completa tendrá entre 5 y 12 caracteres.-->
-                    <input type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" class="form-control"  pattern="^([a-z]+[0-9]{0,2}){4,12}$" required  />
+                    <input type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" class="form-control"  pattern="^([a-zA-Z]+[0-9]{0,2}){4,12}$" required  />
                         <label for="nick">Nick</label>
                         <span *ngIf="!nick.valid && nick.touched" style="color: red;"> 
                            El nick no es correcto
@@ -108,7 +108,7 @@
                       <div class="form-label-group">
                           <!--la cual podrá contener letras mayúsculas, minúsculas, números y los caracteres !?-. Su tamaño: entre 8 y 16 caracteres.-->
                         <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control"  pattern="[A-Za-z0-9!?-]{8,16}" required  />
-                        <label for="password">Password(8-12 caracteres)</label>
+                        <label for="password">Password(8 - 12 caracteres)</label>
                         <span *ngIf="!password.valid && password.touched" style="color: red;"> 
                             La contraseña no es correcta
                         </span>
